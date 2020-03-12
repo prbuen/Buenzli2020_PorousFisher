@@ -9,13 +9,13 @@ u_initial = 0.5; % 0.2, 0.5, 0.8
 u_c = 0.5; % 0.01 (leading edge); 0.2, 0.5, 0.8. NB: influences calculation of pore_area
 
 show_plots = 1; % run twice to make last plot same size as the others (bug?)
-show_plots = 0; % to calculate Tbridge
+% show_plots = 0; % to calculate Tbridge
 
 L = 1;
 dx = L/50; % for speed
 %dx = L/150; % for precision
 N = round(L/dx+1);
-u0 = zeros(N,N);
+u0 = zeros(N,N)+1e-10;
 
 for i=1:N
     u0(i,1)=u_initial;
